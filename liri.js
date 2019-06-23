@@ -27,6 +27,15 @@ function concert(artist) {
             console.log("Name of the venue:   ", response.data[0].venue.name);
             console.log("Venue Location:   ", response.data[0].venue.city);
             console.log("Date of the Event:   ", moment(response.data[0].datetime).format("MM/DD/YYYY"));
+            //adding to log.txt
+            fs.appendFile("./log.txt", "Name of the venue:   " + response.data[0].venue.name + "\n" +
+                "Venue Location:   " + response.data[0].venue.city + "\n" +
+                "Date of the Event:   " + moment(response.data[0].datetime).format("MM/DD/YYYY") + "\n",
+                function(err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                });
         })
         .catch(function(error) {
             console.log(error);
@@ -55,13 +64,25 @@ function spotify(songName) {
     spotify
         .search({ type: 'track', query: songName, limit: 1 })
         .then(function(response) {
+            var arts = "";
             for (let i = 0; i < response.tracks.items[0].album.artists.length; i++) {
                 console.log("ARTISTS :  ", response.tracks.items[0].album.artists[i].name)
+                arts += response.tracks.items[0].album.artists[i].name;
             }
             // console.log(response.tracks.items[0].artists[0].name);
             console.log("NAME of the SONG :  ", response.tracks.items[0].name);
             console.log("Preview :  ", response.tracks.items[0].preview_url);
             console.log("ALBUM :  ", response.tracks.items[0].album.name);
+            // adding to log.txt
+            fs.appendFile("./log.txt", "Artists:   " + arts + "\n" +
+                "NAME of the SONG:   " + response.tracks.items[0].name + "\n" +
+                "Preview:   " + response.tracks.items[0].preview_url + "\n" +
+                "ALBUM :   " + response.tracks.items[0].album.name + "\n",
+                function(err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                });
 
         })
         .catch(function(err) {
@@ -88,6 +109,22 @@ function movie(movieName) {
             console.log("Language:  ", response.data.Language);
             console.log("Plot:  ", response.data.Plot);
             console.log("Actors:  ", response.data.Actors);
+            //adding to log.txt
+            fs.appendFile("./log.txt", "TITLE:   " + response.data.Title + "\n" +
+                "YEAR:   " + response.data.Year + "\n" +
+                "IMDB Rating:   " + response.data.imdbRating + "\n" +
+                "Rotten Tomato Rating :   " + response.data.Ratings[1].Value + "\n" +
+                "Country:   " + response.data.Country + "\n" +
+                "Language:   " + response.data.Language + "\n" +
+                "Plot:   " + response.data.Plot + "\n" +
+                "Actors :   " + response.data.Actors + "\n",
+                function(err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                });
+
+
         })
         .catch(function(error) {
             console.log(error);

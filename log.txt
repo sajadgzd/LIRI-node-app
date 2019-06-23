@@ -1,0 +1,15 @@
+Name of the venue:   Melkweg
+Venue Location:   Amsterdam
+Date of the Event:   08/06/2019
+Artists:   Adele
+NAME of the SONG:   Hello
+Preview:   https://p.scdn.co/mp3-preview/0b90429fd554bad6785faa2b8931d613db4a0ee4?cid=d873bcd76fcc4933b26be98dc035736b
+ALBUM :   25
+TITLE:   The Avengers
+YEAR:   2012
+IMDB Rating:   8.1
+Rotten Tomato Rating :   92%
+Country:   USA
+Language:   English, Russian, Hindi
+Plot:   Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.
+Actors :   Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth
