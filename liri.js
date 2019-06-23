@@ -1,4 +1,5 @@
 require("dotenv").config();
+var moment = require('moment');
 var axios = require("axios");
 var fs = require("fs");
 var keys = require("./keys.js");
@@ -8,16 +9,12 @@ var Spotify = require("node-spotify-api");
 var command = process.argv[2];
 
 function concert(artist) {
+
     axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
         .then(function(response) {
-            // Name of the venue
-            // Venue location
-            // Date of the Event (use moment to format this as "MM/DD/YYYY")
-            // console.log(response.data);
             console.log("Name of the venue:   ", response.data[0].venue.name);
-            console.log("Name of the venue:   ", response.data[0].venue.city);
-            console.log("Name of the venue:   ", response.data[0].datetime);
-
+            console.log("Venue Location:   ", response.data[0].venue.city);
+            console.log("Date of the Event:   ", moment(response.data[0].datetime).format("MM/DD/YYYY"));
         })
         .catch(function(error) {
             console.log(error);
