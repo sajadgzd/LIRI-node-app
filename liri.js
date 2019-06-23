@@ -10,7 +10,7 @@ var command = process.argv[2];
 function concert(artist) {
     axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
         .then(function(response) {
-            console.log(response);
+            console.log(response.data);
         })
         .catch(function(error) {
             console.log(error);
@@ -112,7 +112,7 @@ function doIt() {
 
 switch (command) {
     case "concert-this":
-        // concert();
+        concert(process.argv[3]);
         break;
     case "spotify-this-song":
         spotify(process.argv[3]);
