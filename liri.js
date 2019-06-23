@@ -14,7 +14,7 @@ for (let i = 3; i < process.argv.length; i++) {
     if (i === 3) {
         input = process.argv[3];
     } else {
-        input += "+" + process.argv[i];
+        input += " " + process.argv[i];
     }
 }
 
