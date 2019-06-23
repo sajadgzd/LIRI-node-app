@@ -47,7 +47,6 @@ function concert(artist) {
 }
 
 function spotify(songName) {
-    console.log(songName);
     if (!songName) {
         songName = "The Sign";
     }
@@ -57,13 +56,12 @@ function spotify(songName) {
         .search({ type: 'track', query: songName, limit: 1 })
         .then(function(response) {
             for (let i = 0; i < response.tracks.items[0].album.artists.length; i++) {
-                console.log("ARTISTS :::::: ", response.tracks.items[0].album.artists[i].name)
+                console.log("ARTISTS :  ", response.tracks.items[0].album.artists[i].name)
             }
             // console.log(response.tracks.items[0].artists[0].name);
-            console.log("NAME of the SONG :::::: ", response.tracks.items[0].name);
-            console.log("Preview :::::: ", response.tracks.items[0].preview_url);
-            console.log("ALBUM :::::: ", response.tracks.items[0].album.name);
-            // console.log("Artisttttttt :::::: ", response.tracks.items[0].album.artists);
+            console.log("NAME of the SONG :  ", response.tracks.items[0].name);
+            console.log("Preview :  ", response.tracks.items[0].preview_url);
+            console.log("ALBUM :  ", response.tracks.items[0].album.name);
 
         })
         .catch(function(err) {
@@ -114,7 +112,7 @@ function doIt() {
         if (error) {
             return console.log(error);
         }
-        console.log(data);
+        // console.log(data);
         var array = data.split(",");
         console.log(array);
         if (array[0] === "spotify-this-song") {
@@ -124,7 +122,7 @@ function doIt() {
         } else if (array[0] === "movie-this") {
             movie(array[1]);
         }
-    })
+    });
 
 }
 
