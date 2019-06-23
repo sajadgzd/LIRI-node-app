@@ -21,7 +21,7 @@ for (let i = 3; i < process.argv.length; i++) {
 // console.log(input);
 
 function concert(artist) {
-    console.log(artist);
+    // console.log(artist);
     axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
         .then(function(response) {
             console.log("Name of the venue:   ", response.data[0].venue.name);
@@ -59,7 +59,7 @@ function spotify(songName) {
     if (!songName) {
         songName = "The Sign";
     }
-    console.log(songName);
+    // console.log(songName);
     var spotify = new Spotify(keys.spotify);
     spotify
         .search({ type: 'track', query: songName, limit: 1 })
@@ -92,7 +92,7 @@ function spotify(songName) {
 }
 
 function movie(movieName) {
-    console.log(movieName);
+    // console.log(movieName);
     if (!movieName) {
         movieName = "Mr. Nobody";
     }
