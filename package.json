@@ -1,0 +1,25 @@
+{
+    "name": "LIRI-node-app",
+    "version": "1.0.0",
+    "description": "LIRI is a command line app using node packages that takes in parameters and gives you back data",
+    "main": "keys.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sajadgzd/LIRI-node-app.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/sajadgzd/LIRI-node-app/issues"
+    },
+    "homepage": "https://github.com/sajadgzd/LIRI-node-app#readme",
+    "dependencies": {
+        "axios": "^0.19.0",
+        "dotenv": "^8.0.0",
+        "node-spotify-api": "^1.1.1"
+    }
+}
