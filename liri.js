@@ -8,8 +8,20 @@ var Spotify = require("node-spotify-api");
 
 var command = process.argv[2];
 
-function concert(artist) {
+var input = "";
 
+for (let i = 3; i < process.argv.length; i++) {
+    if (i === 3) {
+        input = process.argv[3];
+    } else {
+        input += "+" + process.argv[i];
+    }
+}
+
+// console.log(input);
+
+function concert(artist) {
+    console.log(artist);
     axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
         .then(function(response) {
             console.log("Name of the venue:   ", response.data[0].venue.name);
@@ -35,6 +47,7 @@ function concert(artist) {
 }
 
 function spotify(songName) {
+    console.log(songName);
     if (!songName) {
         songName = "The Sign";
     }
@@ -60,6 +73,7 @@ function spotify(songName) {
 }
 
 function movie(movieName) {
+    console.log(movieName);
     if (!movieName) {
         movieName = "Mr. Nobody";
     }
@@ -116,13 +130,13 @@ function doIt() {
 
 switch (command) {
     case "concert-this":
-        concert(process.argv[3]);
+        concert(input);
         break;
     case "spotify-this-song":
-        spotify(process.argv[3]);
+        spotify(input);
         break;
     case "movie-this":
-        movie(process.argv[3]);
+        movie(input);
         break;
     case "do-what-it-says":
         doIt();
